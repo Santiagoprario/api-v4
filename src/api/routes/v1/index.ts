@@ -8,7 +8,7 @@ const router: Router = Router();
 // router.use('/users', usersRouter);
 // router.use('/roles', rolesRouter);
 router.use('/', async (req, res) => {
-    res.send(200).json('OK MAURO');
+    return res.json('OK MAURO');
 });
 
 export default router;

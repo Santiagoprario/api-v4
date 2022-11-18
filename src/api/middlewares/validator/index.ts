@@ -5,6 +5,7 @@ import requirements from './requirements';
 export const Requirements = requirements;
 
 export const Validate = (validations: ValidationChain[]) => {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     return async (req: Request, res: Response, next: NextFunction) => {
         await Promise.all(validations.map((validation) => validation.run(req)));
 
