@@ -10,7 +10,7 @@ const levels = {
 };
 
 const level = () => {
-    return AppConfig.app.isDevelopment ? 'debug' : 'warn';
+    return AppConfig.app.server ? 'debug' : 'warn';
 };
 
 const colors = {

@@ -2,6 +2,7 @@ import * as express from 'express';
 import * as compression from 'compression';
 import * as cors from 'cors';
 import * as swaggerUi from 'swagger-ui-express';
+import mongoose from 'mongoose';
 import routesV1 from './api/routes/v1';
 import MorganMiddleware from './api/middlewares/morgan';
 import { Application } from 'express';
@@ -16,6 +17,16 @@ export function createServer(): Application {
         credentials: true
     };
 
+    mongoose.connect(
+        AppConfig.db.host,
+        {
+            autoIndex: true
+        },
+        () => {
+            console.log('Connected to database');
+        }
+    );
+
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
     app.use(cors(corsOption));
@@ -23,7 +34,7 @@ export function createServer(): Application {
     app.use(MorganMiddleware);
     app.use(`/api/${AppConfig.app.apiVersion}`, routesV1);
 
-    if (AppConfig.app.isDevelopment) {
+    if (AppConfig.app.server === 'development') {
         app.use(
             `/docs/${AppConfig.app.apiVersion}`,
             swaggerUi.serve,

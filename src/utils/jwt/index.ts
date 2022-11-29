@@ -23,16 +23,16 @@ class JWT {
         });
     }
 
-    verifyToken(token: string): Promise<jwt.JwtPayload | undefined> {
-        return new Promise((resolve, reject) => {
-            jwt.verify(token, AppConfig.app.secret, (err, decoded) => {
-                if (err) {
-                    reject(err);
-                }
-                resolve(decoded);
-            });
-        });
-    }
+    // verifyToken(token: string): Promise<jwt.JwtPayload | undefined> {
+    //     return new Promise((resolve, reject) => {
+    //         jwt.verify(token, AppConfig.app.secret, (err, decoded) => {
+    //             if (err) {
+    //                 reject(err);
+    //             }
+    //             resolve(decoded);
+    //         });
+    //     });
+    // }
 }
 
 export default new JWT();

@@ -1,12 +1,12 @@
 {
-    "name": "project-structure-api",
-    "version": "2.0.0",
-    "description": "Project structure for API",
+    "name": "api-persoft",
+    "version": "1.0.0",
+    "description": "API persoft",
     "main": "dist/index.js",
     "scripts": {
         "prepare": "husky install",
         "start": "node .",
-        "start-watch": "nodemon --delay 5000ms --exec npm run start",
+        "start-watch": "nodemon node .",
         "build": "tsc",
         "build-watch": "tsc -w",
         "lint": "eslint . --ext .ts",
@@ -17,24 +17,20 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/arifintahu/project-structure-api.git"
+        "url": "git+https://github.com/Santiagoprario/"
     },
     "keywords": [
         "nodejs",
         "typescript",
-        "boilerplate",
         "project"
     ],
     "author": {
-        "name": "Miftahul Arifin",
-        "email": "miftahul97@gmail.com",
-        "url": "https://github.com/arifintahu"
+        "name": "Santiago Prario & Mauro Suarez",
+        "email": "santiagoprario@gmail.com",
+        "url": "https://github.com/Santiagoprario"
     },
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/arifintahu/project-structure-api/issues"
-    },
-    "homepage": "https://github.com/arifintahu/project-structure-api#readme",
+    "homepage": "https://github.com/Santiagoprario",
     "dependencies": {
         "bcrypt": "^5.0.1",
         "compression": "^1.7.4",
@@ -43,6 +39,7 @@
         "express": "^4.17.1",
         "express-validator": "^6.14.2",
         "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.7.3",
         "morgan": "^1.10.0",
         "pg": "^8.7.1",
         "pg-hstore": "^2.3.4",
@@ -78,7 +75,7 @@
         "nodemon": "^2.0.13",
         "prettier": "^2.4.1",
         "ts-node": "^10.2.1",
-        "typescript": "^4.4.3"
+        "typescript": "4.8.4"
     },
     "lint-staged": {
         "*.+(ts)": "eslint --fix",
